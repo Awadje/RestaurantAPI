@@ -12,5 +12,5 @@ var restaurantSchema = new Schema({
   name: String
 });
 
-module.exports = _mongoose2.default.model('Restaurant', restaurantSchema);
+module.exports = _mongoose2.default.model(Restaurant, restaurantSchema);
 //# sourceMappingURL=restaurant.js.map

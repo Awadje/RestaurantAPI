@@ -9,7 +9,7 @@ export default({ config, db }) => {
     let newRest = new Restaurant();
     newRest.name = req.body.name;
 
-    newRest.save(function(err) {
+    newRest.save(err => {
       if (err) {
         res.send(err);
       }

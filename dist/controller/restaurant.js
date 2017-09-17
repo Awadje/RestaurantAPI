@@ -22,7 +22,7 @@ exports.default = function (_ref) {
 
   var api = (0, _express.Router)();
 
-  api.post('/add', function (res, req) {
+  api.post('/add', function (req, res) {
     var newRest = new _restaurant2.default();
     newRest.name = req.body.name;
 
