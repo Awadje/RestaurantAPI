@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import { Router } from 'express';
 import Restaurant from '../model/restaurant';
+import bodyParser from 'body-parser';
 
 export default({ config, db }) => {
   let api = Router();
@@ -22,7 +23,16 @@ export default({ config, db }) => {
       if (err) {
         res.send(err);
       }
-      res.json(restuarants);
+      res.json(restaurants);
+    });
+  });
+
+  api.get('/:id', (req, res) => {
+    Restaurant.findById(req.params.id, (err, restaurant) => {
+      if (err) {
+        res.send(err);
+      }
+      res.json(restaurant);
     });
   });
 
