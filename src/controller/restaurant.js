@@ -51,5 +51,16 @@ export default({ config, db }) => {
     });
   });
 
+  api.delete('/:id', (req, res) => {
+    Restaurant.remove({
+      _id: req.params.id
+    }, (err, restaurant) => {
+      if (err) {
+        res.send(err);
+      }
+        res.json({ message: "Restaurant Succefully deleted" })
+    });
+  });
+
   return api;
 }
